@@ -8,8 +8,9 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     background-color: ${(props) => props.theme.backgroundColor};
   }
+  
   body {
-    font-family: 'Unbounded', cursive;
+    font-family: 'Itim', cursive;
   }
 `
 
