@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 import IconImage from '../src/components/iconImages/IconImages'
 import Navbar from '../src/components/navbar/Navbar'
+import IntroInfo from '../src/components/introInfo/IntroInfo'
 
 const Header = styled.div`
   display: flex;
@@ -16,6 +17,7 @@ export default function confeitariaApp() {
         <IconImage imageName="logoJuliama" type="svg" />
         <Navbar />
       </Header>
+      <IntroInfo />
     </>
   )
 }
