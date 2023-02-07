@@ -5,6 +5,7 @@ import Navbar from '../src/components/navbar/Navbar'
 import IntroInfo from '../src/components/introInfo/IntroInfo'
 import TimeInfos from '../src/components/timeInfos/TimeInfos'
 import Products from '../src/components/products/Products'
+import ProductCard from '../src/components/productCard/ProductCard'
 
 const Header = styled.div`
   display: flex;
@@ -22,13 +23,22 @@ const IntroInfoContainer = styled.div`
   width: 1500px;
 `
 
-const ProductsContainer = styled.div`
+const ProductsMainContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1500px;
+  flex-direction: column;
+  max-width: 1500px;
   margin-left: 420px;
   margin-top: -420px;
+`
+
+const ProductsCardMainContainer = styled.div`
+  display: grid;
+  grid-column-gap: 45px;
+  grid-row-gap: 43px;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 30px;
 `
 
 export default function confeitariaApp() {
@@ -44,9 +54,19 @@ export default function confeitariaApp() {
           <IntroInfo />
         </IntroInfoContainer>
       </InfoContainer>
-      <ProductsContainer>
+      <ProductsMainContainer>
         <Products />
-      </ProductsContainer>
+        <ProductsCardMainContainer>
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+        </ProductsCardMainContainer>
+      </ProductsMainContainer>
     </>
   )
 }
