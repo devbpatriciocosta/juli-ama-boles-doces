@@ -1,5 +1,3 @@
-import styled from 'styled-components'
-
 import H4 from '../typography/H4'
 
 export default function Products() {
