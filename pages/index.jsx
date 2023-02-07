@@ -4,6 +4,7 @@ import IconImage from '../src/components/iconImages/IconImages'
 import Navbar from '../src/components/navbar/Navbar'
 import IntroInfo from '../src/components/introInfo/IntroInfo'
 import TimeInfos from '../src/components/timeInfos/TimeInfos'
+import Products from '../src/components/products/Products'
 
 const Header = styled.div`
   display: flex;
@@ -21,6 +22,15 @@ const IntroInfoContainer = styled.div`
   width: 1500px;
 `
 
+const ProductsContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1500px;
+  margin-left: 420px;
+  margin-top: -420px;
+`
+
 export default function confeitariaApp() {
   return (
     <>
@@ -34,6 +44,9 @@ export default function confeitariaApp() {
           <IntroInfo />
         </IntroInfoContainer>
       </InfoContainer>
+      <ProductsContainer>
+        <Products />
+      </ProductsContainer>
     </>
   )
 }
