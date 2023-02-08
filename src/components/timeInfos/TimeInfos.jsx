@@ -6,13 +6,15 @@ import H4 from '../typography/H4'
 const TimeInfoMainContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 65px;
+  width: 500px;
+  margin-top: 102px;
   border-right: 2px dashed ${(props) => props.theme.secondary};
 `
 
 const WorkingTimeContainer = styled.div`
   display: flex;
   flex-direction: column;
+  text-align: center;
   border-bottom: 2px dashed ${(props) => props.theme.secondary};
   padding: 20px;
 `
@@ -20,13 +22,13 @@ const WorkingTimeContainer = styled.div`
 const SecondaryWorkingTimeContainer = styled.div`
   display: flex;
   flex-direction: column;
+  text-align: center;
   padding: 20px;
 `
 
 const InsideWorkingTimeContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding: 5px 10px 5px 10px;
 `
 
