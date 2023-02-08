@@ -12,13 +12,30 @@ const ProductCardContainer = styled.div`
   flex-direction: column;
   gap: 20px;
   padding: 20px;
+  opacity: 0.7;
+
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.5);
 
   cursor: pointer;
 
   transition: ease-in-out 0.3s;
 
+  -webkit-transition: all 0.9s ease;
+  -moz-transition: all 0.9s ease;
+  -o-transition: all 0.9s ease;
+  -ms-transition: all 0.9s ease;
+  width: 100%;
+  height: 200px;
+
   :hover {
     transform: scale(1.2);
+
+    opacity: 0.99;
+
+    -webkit-transform: scale(1.15);
+    -moz-transform: scale(1.15);
+    -ms-transform: scale(1.15);
+    -o-transform: scale(1.15);
   }
 `
 
@@ -44,7 +61,9 @@ export default function ProductCard() {
           <h6>IMAGEM</h6>
         </ProductImageContainer>
         <ProductInfoContainer>
-          <H5>8,90 / Unidade</H5>
+          <span>
+            <H5>8,90 / Unidade</H5>
+          </span>
         </ProductInfoContainer>
       </ProductCardContainer>
     </>
