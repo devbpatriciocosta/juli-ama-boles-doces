@@ -28,6 +28,12 @@ const SecondaryList = styled.li`
   font-style: normal;
   font-weight: 600;
   line-height: 10px;
+
+  transition: ease-in-out 0.3s;
+
+  :hover {
+    transform: scale(1.2);
+  }
 `
 
 const TagA = styled.a`
