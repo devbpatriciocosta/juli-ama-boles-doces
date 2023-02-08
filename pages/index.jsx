@@ -19,7 +19,7 @@ const InfoContainer = styled.div`
 `
 
 const IntroInfoContainer = styled.div`
-  margin-top: -335px;
+  margin-top: -297px;
   width: 1500px;
 `
 
@@ -30,7 +30,7 @@ const ProductsMainContainer = styled.div`
   flex-direction: column;
   max-width: 1500px;
   margin-left: 420px;
-  margin-top: -420px;
+  margin-top: -430px;
 `
 
 const ProductsCardMainContainer = styled.div`
