@@ -58,13 +58,6 @@ export default function confeitariaApp() {
         <Products />
         <ProductsCardMainContainer>
           <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
         </ProductsCardMainContainer>
       </ProductsMainContainer>
     </>
