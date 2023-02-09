@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const H3 = styled.h1`
+const H3 = styled.h3`
   font-size: 32px;
   font-family: 'Gabriela';
   font-style: normal;
