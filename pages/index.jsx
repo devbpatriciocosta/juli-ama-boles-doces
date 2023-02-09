@@ -1,4 +1,9 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import styled from 'styled-components'
+
+import { useState } from 'react'
+import { useEffect } from 'react'
+import { getProducts, getProductsData } from './api/confeitaria/confeitariaApi'
 
 import IconImage from '../src/components/iconImages/IconImages'
 import Navbar from '../src/components/navbar/Navbar'
@@ -41,7 +46,30 @@ const ProductsCardMainContainer = styled.div`
   margin-top: 30px;
 `
 
-export default function confeitariaApp() {
+function confeitariaApp() {
+  const [loading, setLoading] = useState(false)
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+    fetchAllProducts()
+  }, [])
+
+  const fetchAllProducts = async () => {
+    try {
+      setLoading(true)
+      const data = await getProducts()
+      const promises = data.results.map(async (products) => {
+        return await getProductsData(products.url)
+      })
+
+      const result = await Promise.all(promises)
+      setProducts(result)
+      setLoading(false)
+    } catch (err) {
+      console.log('fetchProducts error', err)
+    }
+  }
+
   return (
     <>
       <Header>
@@ -57,9 +85,11 @@ export default function confeitariaApp() {
       <ProductsMainContainer>
         <Products />
         <ProductsCardMainContainer>
-          <ProductCard />
+          <ProductCard loading={loading} products={products} />
         </ProductsCardMainContainer>
       </ProductsMainContainer>
     </>
   )
 }
+
+export default confeitariaApp
