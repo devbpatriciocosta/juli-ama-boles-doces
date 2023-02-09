@@ -1,6 +1,6 @@
 import Joi from 'joi'
 
-export const sigUpSchema = Joi.object({
+export const signUpSchema = Joi.object({
   completeName: Joi.string()
     .required()
     .max(50)

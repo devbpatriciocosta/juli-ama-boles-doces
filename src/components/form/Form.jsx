@@ -4,7 +4,7 @@ import { joiResolver } from '@hookform/resolvers/joi'
 import axios from 'axios'
 import { useRouter } from 'next/router'
 
-import sigUpSchema from '../../../modules/user/user.schema'
+import signUpSchema from '../../../modules/user/user.schema'
 
 import Input from '../input/Input'
 
@@ -59,7 +59,7 @@ export default function Form() {
     formState: { errors },
     setError
   } = useForm({
-    resolver: joiResolver(sigUpSchema)
+    resolver: joiResolver(signUpSchema)
   })
 
   const handleForm = async (data) => {
