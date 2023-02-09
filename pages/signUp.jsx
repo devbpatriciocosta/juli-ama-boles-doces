@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import IconImage from '../src/components/iconImages/IconImages'
 import H3 from '../src/components/typography/H3'
 
-import Input from '../src/components/input/Input'
+import Form from '../src/components/form/Form'
 
 const Header = styled.div`
   display: flex;
@@ -49,9 +49,7 @@ export default function SignUp() {
       </Header>
       <SecondaryContainer>
         <H3>Cadastro de administrador</H3>
-        <Input />
-        <Input />
-        <Input />
+        <Form />
       </SecondaryContainer>
     </>
   )
