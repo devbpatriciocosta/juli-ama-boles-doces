@@ -1,15 +1,62 @@
 import styled from 'styled-components'
+import { useController } from 'react-hook-form'
+
+const InputContainer = styled.div`
+  min-width: 90%;
+`
 
 const StyledInput = styled.input`
   background-color: ${(props) => props.theme.primary};
-  border: none;
+  border: 2px solid ${(props) => props.theme.secondary};
   border-radius: 50px;
-  width: 235px;
+  width: 100%;
   height: 41px;
-  padding: 20px;
+  padding: 15px 10px;
   color: ${(props) => props.theme.secondary};
+  box-sizing: border-box;
+
+  transition: 0.5s ease-in-out;
+
+  :hover {
+    box-shadow: 0 0 0 2px ${(props) => props.theme.primary};
+  }
+  &:focus {
+    outline: none;
+  }
+  ${(props) => props.error && `border: 2px solid ${props.theme.error};`}
 `
 
-export default function Input() {
-  return <StyledInput />
+const InputLabel = styled.p`
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 5px;
+`
+
+const ErrorLabel = styled.span`
+  color: ${(props) => props.theme.error};
+  font-weight: bold;
+  font-size: 12px;
+`
+
+const errorMessage = {
+  'string.empty': 'Este campo é obrigatório',
+  'string.email': 'Digite um e-mail válido',
+  // eslint-disable-next-line prettier/prettier
+  'duplicated': 'Já existe uma conta registrada com esse valor'
 }
+
+const Input = ({ label, name, control, defaultValue = '', ...props }) => {
+  const {
+    field: { value, onChange },
+    fieldState: { error }
+  } = useController({ name, control, defaultValue })
+
+  return (
+    <InputContainer>
+      <InputLabel>{label}</InputLabel>
+      <StyledInput placeholder={label} error={error} {...props} value={value} onChange={onChange} />
+      {error && <ErrorLabel>{errorMessage[error.type] || error.message}</ErrorLabel>}
+    </InputContainer>
+  )
+}
+export default Input
