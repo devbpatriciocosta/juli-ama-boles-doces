@@ -15,6 +15,12 @@ const StyledInput = styled.input`
   color: ${(props) => props.theme.secondary};
   box-sizing: border-box;
 
+  ::placeholder {
+    color: ${(props) => props.theme.secondary};
+    font-family: 'Gabriela';
+    font-size: 15px;
+  }
+
   transition: 0.5s ease-in-out;
 
   :hover {
@@ -27,9 +33,10 @@ const StyledInput = styled.input`
 `
 
 const InputLabel = styled.p`
-  font-weight: bold;
-  font-size: 14px;
+  font-size: 18px;
+  font-family: 'Gabriela';
   margin-bottom: 5px;
+  color: ${(props) => props.theme.secondary};
 `
 
 const ErrorLabel = styled.span`
