@@ -44,11 +44,11 @@ export default function SignUp() {
       <Header>
         <IconImage imageName="logoJuliama" type="svg" />
         <MainContainer>
-          <H3>Olá, faça Login</H3>
+          <H3>Olá, seja bem-vindo</H3>
         </MainContainer>
       </Header>
       <SecondaryContainer>
-        <H3>Login de administrador</H3>
+        <H3>Cadastro de Produto</H3>
         <LoginForm />
       </SecondaryContainer>
     </>
