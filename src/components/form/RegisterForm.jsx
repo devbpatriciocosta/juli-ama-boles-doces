@@ -73,9 +73,9 @@ export default function Form() {
     <>
       <StyledForm onSubmit={handleSubmit(handleForm)}>
         <Input
-          label="E-mail"
-          type="email"
-          placeholder="Insira seu e-mail"
+          label="Nome"
+          type="name"
+          placeholder="Insina o nome do produto"
           name="Name"
           control={control}
         />
