@@ -32,9 +32,9 @@ const SecondaryContainer = styled.div`
   flex-direction: column;
   gap: 20px;
   background-color: none;
-  width: 600px;
+  width: 700px;
   min-height: 500px;
-  margin-left: 850px;
+  margin-left: 720px;
   border: 2px dashed ${(props) => props.theme.secondary};
 `
 
