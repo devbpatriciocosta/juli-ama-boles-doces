@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import IconImage from '../src/components/iconImages/IconImages'
 import H3 from '../src/components/typography/H3'
 
-import LoginForm from '../src/components/form/LoginForm'
+import RegisterForm from '../src/components/form/RegisterForm'
 
 const Header = styled.div`
   display: flex;
@@ -44,12 +44,12 @@ export default function SignUp() {
       <Header>
         <IconImage imageName="logoJuliama" type="svg" />
         <MainContainer>
-          <H3>Olá, seja bem-vindo</H3>
+          <H3>Olá, administrador</H3>
         </MainContainer>
       </Header>
       <SecondaryContainer>
-        <H3>Cadastro de Produto</H3>
-        <LoginForm />
+        <H3>Cadastrar novo produto</H3>
+        <RegisterForm />
       </SecondaryContainer>
     </>
   )
