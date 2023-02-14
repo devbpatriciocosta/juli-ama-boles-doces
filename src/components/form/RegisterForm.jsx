@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 
 import loginSchema from '../../../modules/user/user.schema'
 
-import Input from '../input/Input'
+import Input from '../input/RadioInput'
 
 const StyledForm = styled.form`
   display: flex;
@@ -14,7 +14,7 @@ const StyledForm = styled.form`
   margin: 20px 0;
   gap: 20px;
   align-items: center;
-  width: 450px;
+  width: 250px;
 
   @media (max-width: 425px) {
     width: 300px;
@@ -22,9 +22,33 @@ const StyledForm = styled.form`
   }
 `
 
+const StyledNormalInput = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-right: 70px;
+`
+
+const InputFile = styled.input`
+  border-radius: 50px;
+  box-decoration-break: none;
+`
+
 const StyledRadioSelectors = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  width: 600px;
+  height: 30px;
+
+  background-color: ${(props) => props.theme.primary};
+  border-radius: 50px;
+
+  color: ${(props) => props.theme.secondary};
 `
+
+const RadioInput = styled.input``
 
 const Button = styled.button`
   cursor: pointer;
@@ -76,26 +100,40 @@ export default function Form() {
   return (
     <>
       <StyledForm onSubmit={handleSubmit(handleForm)}>
-        <Input
-          label="Produto"
-          type="name"
-          placeholder="Insina o nome do produto"
-          name="Name"
-          control={control}
-        />
-        <Input
-          label="Preço"
-          type="number"
-          placeholder="Insina o nome do produto"
-          name="Preco"
-          control={control}
-        />
+        <StyledNormalInput>
+          <Input
+            label="Produto"
+            type="name"
+            placeholder="Insira o nome do produto"
+            name="Name"
+            control={control}
+          />
+          <Input
+            label="Preço"
+            type="number"
+            placeholder="Insira o valor do produto"
+            name="Preco"
+            control={control}
+          />
+          <InputFile
+            label="Imagem"
+            type="file"
+            accept="image/*"
+            placeholder="Anexar imagem"
+            name="Preco"
+            control={control}
+          />
+        </StyledNormalInput>
 
         <StyledRadioSelectors>
-          <Input label="Doces tradicionais" type="radio" name="tradicionais" control={control} />
-          <Input label="Doces tradicionais" type="radio" name="tradicionais" control={control} />
-          <Input label="Doces tradicionais" type="radio" name="tradicionais" control={control} />
-          <Input label="Doces tradicionais" type="radio" name="tradicionais" control={control} />
+          <RadioInput type="radio" name="tradicionais" control={control} />
+          <label>Doces tradicionais</label>
+          <RadioInput type="radio" name="finos" control={control} />
+          <label>Doces finos</label>
+          <RadioInput type="radio" name="BeT" control={control} />
+          <label>Bolos & Tortas</label>
+          <RadioInput type="radio" name="BeM" control={control} />
+          <label>Biscoitos & Merengues</label>
         </StyledRadioSelectors>
 
         <Button type="submit" disabled={Object.keys(errors).length > 0}>
