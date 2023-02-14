@@ -22,6 +22,10 @@ const StyledForm = styled.form`
   }
 `
 
+const StyledRadioSelectors = styled.div`
+  display: flex;
+`
+
 const Button = styled.button`
   cursor: pointer;
   width: 188px;
@@ -73,21 +77,33 @@ export default function Form() {
     <>
       <StyledForm onSubmit={handleSubmit(handleForm)}>
         <Input
-          label="Nome"
+          label="Produto"
           type="name"
           placeholder="Insina o nome do produto"
           name="Name"
           control={control}
         />
         <Input
-          label="Senha"
-          type="password"
-          placeholder="Insira sua senha"
-          name="password"
+          label="Preço"
+          type="number"
+          placeholder="Insina o nome do produto"
+          name="Preco"
           control={control}
         />
+
+        <StyledRadioSelectors>
+          <Input label="Doces tradicionais" type="radio" name="tradicionais" control={control} />
+          <Input label="Doces tradicionais" type="radio" name="tradicionais" control={control} />
+          <Input label="Doces tradicionais" type="radio" name="tradicionais" control={control} />
+          <Input label="Doces tradicionais" type="radio" name="tradicionais" control={control} />
+        </StyledRadioSelectors>
+
         <Button type="submit" disabled={Object.keys(errors).length > 0}>
-          Entrar
+          Salvar
+        </Button>
+
+        <Button type="submit" disabled={Object.keys(errors).length > 0}>
+          Cancelar
         </Button>
       </StyledForm>
     </>
