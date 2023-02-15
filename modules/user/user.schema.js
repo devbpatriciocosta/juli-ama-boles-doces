@@ -27,3 +27,16 @@ export const loginSchema = Joi.object({
     .min(6)
     .message('O campo "Senha" pode ter no mínimo {{#limit}} caracteres')
 })
+
+export const productRegistrationSchema = Joi.object({
+  productName: Joi.string()
+    .required()
+    .max(50)
+    .message('O campo "Produto" pode ter no máximo {{#limit}} caracteres'),
+  productPrice: Joi.string()
+    .required()
+    .max(50)
+    .message('O campo "Preço" pode ter no máximo {{#limit}} caracteres')
+    .min(4)
+    .message('O campo "Senha" pode ter no mínimo {{#limit}} caracteres')
+})
