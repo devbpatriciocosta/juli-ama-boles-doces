@@ -12,6 +12,11 @@ const MainContainer = styled.nav`
   box-sizing: border-box;
 
   clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 2% 50%, 0% 0%);
+
+  @media (max-width: 1420px) {
+    min-height: 60px;
+    text-align: center;
+  }
 `
 
 const MainList = styled.ul`
@@ -46,7 +51,7 @@ const SecondaryList = styled.li`
   font-family: 'Gabriela';
   font-style: normal;
   font-weight: 600;
-  line-height: 10px;
+  line-height: 20px;
 `
 
 const TagA = styled.a`
