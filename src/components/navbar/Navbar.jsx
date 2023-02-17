@@ -10,12 +10,15 @@ const MainContainer = styled.nav`
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
+  flex-wrap: wrap;
 
   clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 2% 50%, 0% 0%);
 
   @media (max-width: 1420px) {
     min-height: 60px;
     text-align: center;
+    clip-path: none;
+    padding: 20px;
   }
 `
 
@@ -43,6 +46,15 @@ const MainList = styled.ul`
 
   li:hover:after {
     width: 100%;
+  }
+
+  @media (max-width: 920px) {
+    gap: 50px;
+  }
+
+  @media (max-width: 720px) {
+    display: flex;
+    flex-direction: column;
   }
 `
 
