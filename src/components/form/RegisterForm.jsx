@@ -7,6 +7,7 @@ import { useRouter } from 'next/router'
 import loginSchema from '../../../modules/user/user.schema'
 
 import Input from '../input/RadioInput'
+import FileUploader from '../fileUploader/FileUploader'
 
 const StyledForm = styled.form`
   display: flex;
@@ -27,11 +28,6 @@ const StyledNormalInput = styled.div`
   flex-direction: column;
   gap: 20px;
   margin-right: 70px;
-`
-
-const InputFile = styled.input`
-  border-radius: 50px;
-  box-decoration-break: none;
 `
 
 const StyledRadioSelectors = styled.div`
@@ -61,10 +57,10 @@ const Button = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.3s ease-in-out;
   font-size: 20px;
   font-weight: bold;
   margin-top: 20px;
+  transition: 0.3s ease-in-out;
 
   :hover {
     background-color: ${(props) => props.theme.primary};
@@ -115,14 +111,7 @@ export default function Form() {
             name="Preco"
             control={control}
           />
-          <InputFile
-            label="Imagem"
-            type="file"
-            accept="image/*"
-            placeholder="Anexar imagem"
-            name="Preco"
-            control={control}
-          />
+          <FileUploader />
         </StyledNormalInput>
 
         <StyledRadioSelectors>
